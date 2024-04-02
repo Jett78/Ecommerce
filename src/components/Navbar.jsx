@@ -31,7 +31,7 @@ const Navbar = () => {
           Jet<span className="text-red-600 text-2xl">Shop</span>
         </h2>
         <div className="hidden sm:block">
-          <ul className="flex gap-5 font-bold">
+          <ul className="flex gap-8 font-bold">
             {Navigation.map((Navigation, index) => (
               <Link key={index} to={Navigation.path}>
                 {Navigation.name}

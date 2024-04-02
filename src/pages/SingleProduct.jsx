@@ -4,6 +4,7 @@ import { add } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
 import { FaStar } from "react-icons/fa6";
 import { FaRegStar } from "react-icons/fa6";
+import Card from "../components/Card.jsx";
 
 const SingleProduct = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,8 @@ const SingleProduct = () => {
     };
     fetchProduct();
   }, []);
+
+  
   return (
     <main>
       <h2 className="bg-white text-2xl font-bold p-4 ">Category: {category}</h2>
@@ -77,6 +80,7 @@ const SingleProduct = () => {
           </div>
         </section>
       </div>
+ 
     </main>
   );
 };
