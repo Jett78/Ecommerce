@@ -33,7 +33,7 @@ const Footer = () => {
         </section>
         <section>
             <h2 className="text-xl font-semibold pb-5">Contact</h2>
-            <div>
+            <div className="grid gap-3">
                 <p>Kumbeshwar-11,Lalitpur</p>
                 <p>+977-9898989898</p>
                 <p>jetdeula@gmail.com</p>

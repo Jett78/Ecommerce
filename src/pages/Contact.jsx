@@ -15,6 +15,7 @@ const Contact = () => {
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
+            className="w-80 sm:w-[50rem]"
           ></iframe>
         </section>
 
@@ -22,7 +23,7 @@ const Contact = () => {
           <form
             action="https://formspree.io/f/xzbnrpbe"
             method="post"
-            className="grid p-5 w-[27rem] h-[35rem] rounded-lg border-2 border-gray-400 bg-white"
+            className="grid p-5 max-w-[27rem] max-h-[35rem] mx-2 rounded-lg border-2 border-gray-400 bg-white"
           >
             <h2 className="text-center text-xl font-bold mb-3">Contact us</h2>
             <p className="text-gray-400">If you have any queries regarding us.feel free to ask us!!</p>
