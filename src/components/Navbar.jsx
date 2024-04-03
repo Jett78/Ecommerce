@@ -1,8 +1,9 @@
-import React from "react";
+import { useDisclosure } from '@chakra-ui/react'
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Modal, ModalContent,} from '@chakra-ui/react'
 
 const Navigation = [
   {
@@ -24,13 +25,23 @@ const Navigation = [
 ];
 const Navbar = () => {
   const item = useSelector((state) => state.cart);
+  const { isOpen, onOpen,onClose } = useDisclosure()
+
+  //toggle
+  const handleToggleModal = () => {
+    if (isOpen) {
+      onClose();
+    } else {
+      onOpen();
+    }
+  };
 
   return (
     <main>
       <div className="flex justify-around items-center p-4 shadow-lg z-10">
         <section className="flex items-center gap-2">
         <div className="pr-2 sm:hidden block">
-          <GiHamburgerMenu />
+          <GiHamburgerMenu  onClick={handleToggleModal}/>
         </div>
         <h2 className="text-3xl font-bold">
           Jet<span className="text-red-600 text-2xl">Shop</span>
@@ -58,6 +69,21 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
+
+  {/* sidebar  */}
+      <Modal isOpen={isOpen}>
+        <ModalContent >
+        <div>
+        {<ul className="sm:hidden grid text-center absolute top-[4rem] py-1 gap-8 font-bold bg-white w-full" >
+            {Navigation.map((Navigation, index) => (
+              <Link key={index} to={Navigation.path}>
+                {Navigation.name}
+              </Link>
+            ))}
+          </ul>}
+      </div>
+        </ModalContent>
+      </Modal>
     </main>
   );
 };
