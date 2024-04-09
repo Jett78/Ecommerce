@@ -6,7 +6,7 @@ const Cart = () => {
   const products = useSelector((state=>state.cart))
   return (
     <main>
-      <div className='mt-10'>
+      <div className='mt-10 min-h-screen'>
         <div className='grid gap-1'>
           {
              products.map((product,index) => (
