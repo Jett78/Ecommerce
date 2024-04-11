@@ -10,7 +10,7 @@ const Card = ({ product }) => {
   return (
     <main className="px-2">
      <Link to={`SingleProduct/${id}`}>
-     <div className=" bg-white shadow-md p-8 w-[15rem] h-[25rem] flex flex-col justify-center items-center text-left ">
+     <div className=" bg-white shadow-md p-8 w-[15rem] h-[25rem] flex flex-col justify-center items-center text-left hover:shadow-l hover:shadow-black ease-in-out duration-300">
        
        <figure className="w-[8rem]">
          <img src={image} alt="images"/>

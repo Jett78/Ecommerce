@@ -7,7 +7,7 @@ const Products = () => {
 
   useEffect(() => {
     const fetchdata = async () => {
-      const res = await fetch("https://fakestoreapi.com/products");
+      const res = await fetch("https://fakestoreapi.com/products/");
       const data = await res.json();
       console.log(data);
       setProducts(data);
