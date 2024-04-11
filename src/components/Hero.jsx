@@ -1,22 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
     <main>
          <div className="flex flex-wrap justify-center items-center bg-gray-200 p-12">
         <section>
-          <div className="text-5xl font-bold">
-            <h1>Find The Best Fashion</h1>
-            <h1>Style For</h1>
-            <h1>You</h1>
-            <div className="text-xl font-normal my-5 text-gray-500">
+          <div>
+            <h1 className='sm:text-5xl text-4xl font-bold max-w-[30rem]'>Find The Best fashion style For You</h1>
+            <div className="text-xl  my-5 text-gray-500">
               <p>
                 A specialist label creating luxury essentials.Ethically crafted
               </p>
               <p>with an unwavering commitment to exceptional quality.</p>
             </div>
           </div>
-          <button className="bg-green-500 px-5 py-2 text-white font-semibold rounded-xl">Shop Now</button>
+         <Link to={"/products"}> <button className="bg-green-500 px-5 py-2 text-white font-semibold rounded-xl">Shop Now</button></Link>
         </section>
         <section>
           <figure className="sm:block hidden">

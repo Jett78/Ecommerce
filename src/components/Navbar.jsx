@@ -43,9 +43,9 @@ const Navbar = () => {
         <div className="pr-2 sm:hidden block">
           <GiHamburgerMenu  onClick={handleToggleModal}/>
         </div>
-        <h2 className="text-3xl font-bold">
-          Jet<span className="text-red-600 text-2xl">Shop</span>
-        </h2>
+       <Link to={"/"}> <h2 className="sm:text-3xl text-2xl font-bold">
+          Jet<span className="text-red-600 sm:text-2xl text-xl">Shop</span>
+        </h2></Link>
         </section>
         <div className="hidden sm:block">
           <ul className="flex gap-8 font-bold">
