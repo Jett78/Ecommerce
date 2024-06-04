@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Modal, ModalContent,} from '@chakra-ui/react'
+import { useState } from 'react';
 
 const Navigation = [
   {
@@ -26,6 +27,11 @@ const Navigation = [
 const Navbar = () => {
   const item = useSelector((state) => state.cart);
   const { isOpen, onOpen,onClose } = useDisclosure()
+  const [activeLink,setActiveLink] = useState(window.location.pathname)
+
+  const handleSetActive = (path) => {
+    setActiveLink(path);
+  }
 
   //toggle
   const handleToggleModal = () => {
@@ -47,15 +53,21 @@ const Navbar = () => {
           Jet<span className="text-red-600 sm:text-2xl text-xl">Shop</span>
         </h2></Link>
         </section>
+
         <div className="hidden sm:block">
-          <ul className="flex gap-8 font-bold">
+        <ul className="flex gap-8 font-bold">
             {Navigation.map((Navigation, index) => (
-              <Link key={index} to={Navigation.path}>
-                {Navigation.name}
+              <Link 
+              key={index} 
+              to={Navigation.path} 
+              onClick={() => handleSetActive(Navigation.path)}
+              className={activeLink === Navigation.path ? "text-red-600" : ""}>
+              {Navigation.name}
               </Link>
             ))}
           </ul>
         </div>
+        
         <div className="flex items-center gap-4">
           <button className="bg-purple-500 text-white px-4 py-1 rounded-lg hidden sm:block">
             Login
