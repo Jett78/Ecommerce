@@ -1,6 +1,6 @@
 import React from "react";
 import Faces from "../components/Faces";
-
+import { motion } from "framer-motion";
 const info = [
   {
     img: "https://media.istockphoto.com/id/1045886560/photo/portrait-of-smiling-handsome-man-in-blue-t-shirt-standing-with-crossed-arms-isolated-on-grey.webp?b=1&s=170667a&w=0&k=20&c=mQxXIqT34BwDz9azTT92UwD-Wrybb2IRNqkvSGjGR1I=",
@@ -26,8 +26,13 @@ const info = [
 
 const About = () => {
   return (
-    <main>
-      <div className="bg-gray-200 text-center p-12">
+    <motion.main
+    initial={{opacity:0,y:"100%"}}
+    animate={{opacity:1,y:0}}
+    transition={{ease:"easeInOut",duration:0.5}}
+    >
+      <div 
+      className="bg-gray-200 text-center p-12">
         <h2 className="text-4xl font-bold">About Our Family</h2>
         <p className="text-l font-semibold max-w-[40rem] mx-auto py-5 text-gray-500 ">
           {" "}
@@ -82,7 +87,7 @@ const About = () => {
           </p>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 };
 

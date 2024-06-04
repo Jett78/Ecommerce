@@ -1,11 +1,15 @@
 import React from "react";
-import { IoLocation } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 
 const Contact = () => {
   return (
-    <main>
- <h2 className="text-4xl text-center font-bold bg-gray-200 p-10">#Contact us</h2>
+    <motion.main
+    initial={{opacity:0,x:"-100%"}}
+    animate={{opacity:1,x:0}}
+    transition={{ease:"easeInOut",duration:0.5}}
+    >
+     <h2 className="text-4xl text-center font-bold bg-gray-200 p-10">#Contact us</h2>
       <div className="flex flex-wrap justify-center items-center gap-4 mt-10">
         <section>
           <iframe
@@ -61,7 +65,7 @@ const Contact = () => {
           </form>
         </section>
       </div>
-    </main>
+    </motion.main>
   );
 };
 
